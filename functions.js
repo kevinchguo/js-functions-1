@@ -4,6 +4,10 @@
  * @return {string} the number as a string
  */
 
+ function numberToString(n) {
+    let num = n.toString();
+    return num;
+}
 
 /**
  * Adds one to a given number.
@@ -11,6 +15,9 @@
  * @return {number}
  */
 
+ function increase(n) {
+     return n+=1;
+ }
 
 /**
  * Subtracts one from a given number.
@@ -18,6 +25,9 @@
  * @return {number}
  */
 
+ function decrease(n) {
+     return n-=1;
+ }
 
 /**
  * Adds two numbers.
@@ -26,6 +36,9 @@
  * @return {number} the sum
  */
 
+function add(x,y) {
+    return x+=y;
+}
 
 /**
  * Subtracts the second number from the first.
@@ -34,6 +47,9 @@
  * @return {number} the difference
  */
 
+function subtract(x,y) {
+    return x-=y;
+}
 
 /**
  * Multiplies two numbers.
@@ -42,6 +58,9 @@
  * @return {number} the product
  */
 
+ function multiply(x,y) {
+     return x*=y;
+ }
 
 /**
  * Divides the first number by the second.
@@ -50,6 +69,9 @@
  * @return {number} the quotient
  */
 
+ function divide(x,y) {
+     return x/=y;
+ }
 
 /**
  * Multiplies a number by itself.
@@ -57,6 +79,9 @@
  * @return {number} squared
  */
 
+ function square(x) {
+     return x*x;
+ }
 
 /**
  * Performs a mathematical operation on two numbers.
@@ -67,7 +92,32 @@
  * @return {number} the result
  */
 
+ function calculate(operation, x, y) {
+    switch(operation) {
+        case 'add':
+            let sum = add(x,y)
+            console.log(x + " + " + y + " = " + sum);
+            return sum;
+            break;
+        case 'subtract':
+            let difference = subtract(x,y)
+            console.log(x + " - " + y + " = " + difference);
+            return difference;
+            break;
+        case 'multiply':
+            let product = multiply(x,y)
+            console.log(x + " * " + y + " = " + product);
+            return product;
+            break;
+        case 'divide':
+            let quotient = divide(x,y)
+            console.log(x + " / " + y + " = " + quotient);
+            return quotient;
+            break;
+    }
+ }
 
+ calculate(subtract,1,2)
 /**
  * Returns true if `a` is greater than `b`.
  * @param {number} a
