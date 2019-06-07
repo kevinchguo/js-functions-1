@@ -92,6 +92,29 @@ function subtract(x,y) {
  * @return {number} the result
  */
 
+// function calculate(operation, x, y) {
+//     let result;
+//    if(operation === "add") {
+//      let sum = add(x,y);
+//      result = x + " + " + y + " = " + sum;
+//      return result
+//    } else if(operation === "subtract") {
+//      let difference = subtract(x,y);
+//      result = x + " - " + y + " = " + difference;
+//      return result
+//    } else if(operation === "multiply") {
+//      let product = multiply(x,y);
+//      result = x + " * " + y + " = " + product;
+//      return result
+//    } else if(operation === "divide") {
+//      let quotient = divide(x,y);
+//      result = x + " / " + y + " = " + quotient;
+//      return result
+//    };
+//   }
+
+//   console.log(calculate("add",4,2));
+
  function calculate(operation, x, y) {
     switch(operation) {
         case 'add':
