@@ -125,7 +125,14 @@ function subtract(x,y) {
  * @return {boolean} `a` is larger than `b`
  */
 
-
+ function isGreaterThan(a,b) {
+     if (a > b) {
+         return true;
+     } else {
+         return false;
+     }
+ }
+console.log(isGreaterThan(7,3));
 /**
  * Returns true if `a` is less than `b`.
  * @param {number} a
@@ -133,6 +140,13 @@ function subtract(x,y) {
  * @return {boolean} `a` is smaller than `b`
  */
 
+function isLessThan(a,b) {
+    if (a < b) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 /**
  * Returns true if `a` and `b` are equal.
@@ -141,6 +155,14 @@ function subtract(x,y) {
  * @return {boolean} the numbers are equal
  */
 
+function areEqual(x,y) {
+    if (x === y){
+        return true;
+    } else {
+        return false;
+    }
+}
+areEqual(5,5)
 
 /**
  * Returns the smallest value of two numbers.
@@ -149,6 +171,10 @@ function subtract(x,y) {
  * @return {number} the smallest number
  */
 
+function minimum(x,y) {
+    return Math.min(x,y);
+ }
+ console.log(minimum(10,3));
 
 /**
  * Returns the largest value of two numbers.
@@ -157,6 +183,10 @@ function subtract(x,y) {
  * @return {number} the largest number
  */
 
+function maximum(x,y) {
+    return Math.max(x,y);
+ }
+ console.log(maximum(10,3));
 
 /**
  * Returns true if `n` is even.
@@ -164,6 +194,14 @@ function subtract(x,y) {
  * @return {boolean} the number is even
  */
 
+ function isEven(n) {
+     if (n%2 === 0) {
+         return true;
+     } else {
+         return false;
+     }
+ }
+ console.log(isEven(3));
 
 /**
  * Returns true if `n` is odd.
@@ -171,6 +209,14 @@ function subtract(x,y) {
  * @return {boolean} the number is odd
  */
 
+ function isOdd(n) {
+     if (n%2 !== 0) {
+         return true;
+     } else {
+         return false;
+     }
+ }
+console.log(isOdd(2));
 
 /**
  * Returns a letter grade.
@@ -184,6 +230,27 @@ function subtract(x,y) {
  * @return {string} the score represented as a letter grade
  */
 
+function letterGrade(score, total) {
+    let grade = "";
+    let calcGrade = score/total * 100;
+    let gradingScale = {
+        "A": 90,
+        "B": 80,
+        "C": 70,
+        "D": 60,
+        "F": 0,
+    }
+    // console.log(gradingScale)
+    for (var letterGrade in gradingScale ) {
+        // console.log(gradingScale[x])
+        // console.log(letterGrade)
+        if (calcGrade >= gradingScale[letterGrade]) {
+            grade += letterGrade;
+            return grade;
+        } 
+    }
+}
+console.log(letterGrade(90,1000));
 
 /**
  * Checks if a `restaurant` object has a `reviews` property.
@@ -193,6 +260,15 @@ function subtract(x,y) {
  * @return {object} restaurant
  */
 
+ function incrementReviews(restaurant) {
+    if (restaurant.reviews === undefined) {
+        restaurant.reviews = 1;
+    } else {
+        restaurant.reviews++
+    }
+    return restaurant;
+ }
+ console.log(incrementReviews({}));
 
 /**
  * Joins two strings with a space.
@@ -201,6 +277,11 @@ function subtract(x,y) {
  * @return {string} joined the words joined with a space
  */
 
+ function combine(word1, word2) {
+    let wholeWord = word1 + " " + word2;
+    return wholeWord
+ }
+combine("hello","world")
 
 /**
  * Returns a circle object with the properties `circumference` and `area`.
@@ -210,3 +291,14 @@ function subtract(x,y) {
  * @return {object} circle
  */
 
+ function createCircle(radius) {
+    let circle = {
+        circumference: 0,
+        area: 0,
+    }
+    circle.circumference = 2 * Math.PI * radius
+    circle.area = Math.PI * square(radius);
+    return circle;
+
+ }
+createCircle(10);
